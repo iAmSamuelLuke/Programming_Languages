@@ -70,7 +70,7 @@ void isReserved(char * lexeme);
 int main()
 {
     /* Open the input data file and process its contents */
-    if ((in_fp = fopen("C:\\Users\\julia\\OneDrive\\Documents\\GitHub\\Programming_Languages\\front.in", "r")) == NULL) {
+    if ((in_fp = fopen("front.in", "r")) == NULL) {
         printf("ERROR - cannot open front.in \n");
     } else {
         getChar();
@@ -260,7 +260,7 @@ void addChar() {
     if (lexLen <= 98) {
         lexeme[lexLen++] = nextChar;
         lexeme[lexLen] = '\0';
-        //isReserved(lexeme);
+        
     } else {
         printf("Error - lexeme is too long \n");
     }

@@ -1,0 +1,7 @@
+//below is some useful code I came up with that you can insert when there is a problem
+
+
+if(isgoingtocrash){
+   dont;
+}
+

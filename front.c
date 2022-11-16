@@ -19,7 +19,7 @@ void addChar();
 void getChar();
 void getNonBlank();
 int lex();
-void isReserved(char * lexeme);
+void isReserved();
 
 /* Character classes */
 #define LETTER 0
@@ -70,7 +70,7 @@ void isReserved(char * lexeme);
 int main()
 {
     /* Open the input data file and process its contents */
-    if ((in_fp = fopen("front.in", "r")) == NULL) {
+    if ((in_fp = fopen("front1.in", "r")) == NULL) {
         printf("ERROR - cannot open front.in \n");
     } else {
         getChar();
@@ -216,7 +216,7 @@ int lookup(char ch) {
 
 /*****************************************************/
 
-void isReserved(char * lexeme){
+void isReserved(){
     int result;
     for(int i=0; i < 9; i++){
         result = strcmp(lexeme, reservedWords[i]);
@@ -260,7 +260,7 @@ void addChar() {
     if (lexLen <= 98) {
         lexeme[lexLen++] = nextChar;
         lexeme[lexLen] = '\0';
-        
+
     } else {
         printf("Error - lexeme is too long \n");
     }
@@ -309,7 +309,7 @@ int lex() {
             }
 
             nextToken = IDENT;
-            isReserved(lexeme);
+            isReserved();
             break;
 
         /* Parse integer literals */
